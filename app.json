@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "BetoBot",
+    "slug": "BetoBot",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
