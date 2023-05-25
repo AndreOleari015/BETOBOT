@@ -1,12 +1,11 @@
+import { View } from 'react-native';
 import React, { useCallback } from 'react';
 import { StatusBar } from 'expo-status-bar';
 
 import * as SplashScreen from 'expo-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
 import { Inter_900Black, Inter_600SemiBold, Inter_700Bold, useFonts } from "@expo-google-fonts/inter";
-import { View } from 'react-native';
-import Home from './src/screens/Home/Home';
-import Chat from './src/screens/Chat/Chat';
+import StackRoute from './src/routes/Stack.routes';
 
 export default function App() {
 
@@ -30,7 +29,7 @@ export default function App() {
         style={{ flex: 1 }}
         onLayout={onLayoutRootView}>
         <StatusBar style="auto" />
-        <Chat />
+        <StackRoute />
       </View>
     </NavigationContainer>
   );

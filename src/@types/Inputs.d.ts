@@ -5,5 +5,5 @@ export type InputDefaultProps = TextInputProps & {
 }
 export type InputMessageProps = TextInputProps & {
     style?: StyleProp<ViewStyle>,
-    onSendPress?: (event: GestureResponderEvent) => void;
+    onSendPress?: (msg?:string) => void;
 }

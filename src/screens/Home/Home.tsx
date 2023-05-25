@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, ScrollView, Text, Image, StyleSheet } from 'react-native'
 import Container from '../../components/System/Container';
 import InputDefault from '../../components/Inputs/InputDefault';
 import ButtonDefault from '../../components/Pressables/ButtonDefault';
 import { Fonts } from '../../themes/Fonts';
 import { Colors } from '../../themes/Colors';
+import { useNavigation } from '@react-navigation/native';
+import { ToastyMessage } from '../../components/System/ToastyMessage';
 
 
 const Home = () => {
 
+    const navigation = useNavigation();
+
+    const [name, setName] = useState("");
+
+    const handleChatScreen = () => {
+        if (name) {
+            navigation.navigate("Chat", { name })
+        } else {
+            ToastyMessage("Insira seu nome para continuar")
+        }
+    }
+
     return (
         <Container>
-            <ScrollView style={styles.scrollContainer}>
+            <ScrollView 
+            showsVerticalScrollIndicator={false}
+            style={styles.scrollContainer}>
                 <View style={styles.imageContainer}>
                     <Image
                         source={require("../../assets/beto.png")} />
@@ -22,11 +38,12 @@ const Home = () => {
                 </View>
                 <View style={styles.inputsContainer}>
                     <InputDefault
+                        value={name}
+                        onChangeText={setName}
                         placeholder='Nome...' />
-                    <InputDefault
-                        placeholder='Sobrenome...' />
                 </View>
                 <ButtonDefault
+                    onPress={handleChatScreen}
                     style={styles.buttonContainer} />
             </ScrollView>
         </Container>

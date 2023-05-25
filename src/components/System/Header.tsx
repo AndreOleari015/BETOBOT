@@ -5,13 +5,22 @@ import { Colors } from '../../themes/Colors';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Fonts } from '../../themes/Fonts';
 import UserPicture from './UserPicture';
+import { useNavigation } from '@react-navigation/native';
 
 
 const Header = () => {
 
+    const navigation = useNavigation();
+
+    const handleGoBack = () => {
+        navigation.goBack();
+    }
+
     return (
         <SafeAreaView style={styles.container}>
-            <AntDesign name="left" size={42} color={Colors.branco} />
+            <AntDesign
+                onPress={handleGoBack}
+                name="left" size={42} color={Colors.branco} />
             <View style={styles.userInfContainer}>
                 <UserPicture />
                 <Text style={styles.botNameLabel}>BETO</Text>

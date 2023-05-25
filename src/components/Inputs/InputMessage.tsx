@@ -20,8 +20,8 @@ const InputMessage = ({ style, onSendPress, ...props }: InputMessageProps) => {
             <TouchableOpacity
                 style={styles.buttonSendContainer}
                 activeOpacity={0.5}
-                onPress={onSendPress}>
-                <Ionicons name="send" size={36} color={Colors.verde2} />
+                onPress={() => onSendPress()}>
+                <Ionicons name="send" size={36} color={Colors.verde1} />
             </TouchableOpacity>
         </View>
     );
@@ -39,14 +39,14 @@ const styles = StyleSheet.create({
     input: {
         flex: 1,
         fontSize: 16,
-        alignSelf:"center",
+        alignSelf: "center",
         fontFamily: Fonts.InterSemiBold
     },
     buttonSendContainer: {
         width: "18%",
         alignItems: "center",
-        alignSelf:"flex-end",
-        marginBottom:5,
+        alignSelf: "flex-end",
+        marginBottom: 5,
         justifyContent: "center",
     }
 })

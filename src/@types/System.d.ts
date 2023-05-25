@@ -7,6 +7,6 @@ export type ContainerProps = {
 
 export type MessageProps = {
     type: "bot" | "user",
-    stateMessageBot?: "creating" | "ready",
+    stateMessageBot?: boolean,
     message?: string,
 }
